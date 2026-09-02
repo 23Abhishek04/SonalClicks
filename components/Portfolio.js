@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 /**
  * Portfolio.js — Linen & Light Photography
@@ -86,12 +87,14 @@ export default function Portfolio() {
               style={{ breakInside: "avoid", border: "none", padding: 0, background: "none", cursor: "pointer" }}
               aria-label={`Open portfolio image ${i + 1}`}
             >
-              <img
-                src={src}
-                alt={`Portfolio shot ${i + 1}`}
-                loading="lazy"
-                className="w-full h-auto block transition-transform duration-500 ease-out group-hover:scale-105"
-              />
+              <Image
+    src={src}
+    alt={`Portfolio shot ${i + 1}`}
+    width={1200}
+    height={1600}
+    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+    className="w-full h-auto block transition-transform duration-500 ease-out group-hover:scale-105"
+  />
               <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{ backgroundColor: "rgba(20,17,13,0.18)" }}

@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 /**
  * Services.js — Linen & Light Photography
@@ -52,12 +53,13 @@ function ServiceCard({ service }) {
       href={`#${service.label.toLowerCase().replace(/\s+/g, "-")}`}
       className="group relative block overflow-hidden w-full h-full"
     >
-      <img
-        src={service.image}
-        alt={service.label}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-        draggable={false}
-      />
+     <Image
+  src={service.image}
+  alt={service.label}
+  fill
+  sizes="(max-width: 767px) 100vw, 33vw"
+  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+/>
       <div
         className="absolute inset-0"
         style={{
