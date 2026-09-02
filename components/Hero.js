@@ -1,49 +1,13 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
-import { Download } from "lucide-react";
-
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaWhatsapp,
-} from "react-icons/fa";
+import Image from "next/image";
 
 const COLORS = {
   gold: "#C9A462",
   goldDeep: "#B5844A",
   white: "#FFFFFF",
 };
-
-const SOCIALS = [
-  {
-    icon: Download,
-    label: "Book now",
-    href: "#contact",
-  },
-  {
-    icon: FaYoutube,
-    label: "YouTube",
-    href: "#",
-  },
-  {
-    icon: FaFacebookF,
-    label: "Facebook",
-    href: "#",
-  },
-  {
-    icon: FaInstagram,
-    label: "Instagram",
-    href: "https://instagram.com",
-  },
-  {
-    icon: FaWhatsapp,
-    label: "WhatsApp",
-    href: "#",
-  },
-];
 
 const HERO_BANNERS = [
   {
@@ -74,7 +38,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) =>
-        prev === HERO_BANNERS.length - 1 ? 0 : prev + 1
+        prev === HERO_BANNERS.length - 1 ? 0 : prev + 1,
       );
     }, 5000);
 
@@ -86,30 +50,29 @@ export default function Hero() {
       id="home"
       className="relative h-screen min-h-150 w-full overflow-hidden"
       style={{
-        fontFamily:
-          "var(--font-jost), 'Helvetica Neue', Arial, sans-serif",
+        fontFamily: "var(--font-jost), 'Helvetica Neue', Arial, sans-serif",
       }}
     >
       {/* Background Slider */}
       <div className="absolute inset-0">
         {HERO_BANNERS.map((banner, index) => (
-          <img
+          <div
             key={banner.image}
-            src={banner.image}
-            alt={banner.alt}
-            className={`
-              absolute inset-0
-              h-full w-full
-              object-cover object-center
-              transition-opacity duration-1500 ease-in-out
-              ${
-                currentSlide === index
-                  ? "z-10 opacity-100"
-                  : "z-0 opacity-0"
-              }
-            `}
-            fetchPriority={index === 0 ? "high" : "auto"}
-          />
+            className={`absolute inset-0 transition-opacity duration-1500 ease-in-out ${
+              currentSlide === index ? "z-10 opacity-100" : "z-0 opacity-0"
+            }`}
+          >
+            <Image
+              src={banner.image}
+              alt={banner.alt}
+              fill
+              priority={index === 0}
+              loading={index === 0 ? "eager" : "lazy"}
+              quality={80}
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+          </div>
         ))}
       </div>
 
@@ -141,13 +104,7 @@ export default function Hero() {
         <div className="mx-auto max-w-7xl px-5 pb-7 sm:px-8 sm:pb-10 lg:px-10 lg:pb-14">
           <div className="w-full sm:max-w-xl lg:max-w-2xl">
             <div
-              className="
-                border border-white/10
-                px-6 py-7
-                backdrop-blur-[3px]
-                sm:px-8 sm:py-8
-                lg:px-10 lg:py-9
-              "
+              className=" border border-white/10 px-6 py-7 backdrop-blur-[3px] sm:px-8 sm:py-8 lg:px-10 lg:py-9 "
               style={{
                 backgroundColor: "rgba(20,17,13,0.62)",
                 boxShadow: "0 12px 45px rgba(0,0,0,0.12)",
@@ -181,8 +138,7 @@ export default function Hero() {
                   lg:text-[48px]
                 "
                 style={{
-                  fontFamily:
-                    "var(--font-cormorant), Georgia, serif",
+                  fontFamily: "var(--font-cormorant), Georgia, serif",
                   color: COLORS.white,
                   letterSpacing: "0.01em",
                 }}
@@ -259,15 +215,12 @@ export default function Hero() {
             type="button"
             onClick={() => setCurrentSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
-            className={`
-              h-1.5 rounded-full
-              transition-all duration-500
-              ${
-                currentSlide === index
-                  ? "w-8 bg-[#C9A462]"
-                  : "w-1.5 bg-white/60 hover:bg-white"
-              }
-            `}
+            aria-current={currentSlide === index ? "true" : undefined}
+            className={`h-1.5 rounded-full transition-all duration-500 ${
+              currentSlide === index
+                ? "w-8 bg-[#C9A462]"
+                : "w-1.5 bg-white/60 hover:bg-white"
+            }`}
           />
         ))}
       </div>
@@ -291,13 +244,10 @@ export default function Hero() {
           lg:flex
         "
       >
-        <span className="text-[9px] uppercase tracking-[0.25em]">
-          Scroll
-        </span>
+        <span className="text-[9px] uppercase tracking-[0.25em]">Scroll</span>
 
         <span className="h-8 w-px bg-white/50" />
       </a>
     </section>
   );
 }
-
