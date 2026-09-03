@@ -18,7 +18,7 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Linen & Light Photography",
+  title: "Sonal Clicks",
   description:
     "Luxury wedding, pre-wedding, portrait and destination photography.",
 };
