@@ -69,7 +69,7 @@ export default function Feedback() {
 <div
   className="absolute inset-0 bg-cover bg-center"
   style={{
-    backgroundImage: "url('/images/model2.png')",
+    backgroundImage: "url('/images/model2.webp')",
   }}
   aria-hidden="true"
 />

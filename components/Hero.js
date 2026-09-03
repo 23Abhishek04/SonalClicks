@@ -11,23 +11,23 @@ const COLORS = {
 
 const HERO_BANNERS = [
   {
-    image: "/images/banner1.png",
+    image: "/images/banner1.webp",
     alt: "Wedding banner 1",
   },
   {
-    image: "/images/banner2.png",
+    image: "/images/banner2.webp",
     alt: "Wedding banner 2",
   },
   {
-    image: "/images/banner3.png",
+    image: "/images/banner3.webp",
     alt: "Wedding banner 3",
   },
   {
-    image: "/images/banner4.png",
+    image: "/images/banner4.webp",
     alt: "Wedding banner 4",
   },
   {
-    image: "/images/banner5.png",
+    image: "/images/banner5.webp",
     alt: "Wedding banner 5",
   },
 ];

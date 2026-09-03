@@ -13,23 +13,23 @@ const COLORS = {
 const SERVICES = [
   {
     label: "Wedding",
-    image: "/images/wedding.jpg",
+    image: "/images/wedding.webp",
   },
   {
     label: "Pre-Wedding",
-    image: "/images/prewedding.jpg",
+    image: "/images/prewedding.webp",
   },
   {
     label: "Maternity",
-    image: "/images/maternity.jpg",
+    image: "/images/maternity.webp",
   },
   {
     label: "Baby Shoot",
-    image: "/images/baby.jpg",
+    image: "/images/baby.webp",
   },
   {
     label: "Model Shoot",
-    image: "/images/model.png",
+    image: "/images/model.webp",
   },
 ];
 

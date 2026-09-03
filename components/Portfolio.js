@@ -12,18 +12,18 @@ const COLORS = {
 };
 
 const IMAGES = [
-  "/portfolio/1.jpg",
-  "/portfolio/2.jpg",
-  "/portfolio/3.jpg",
-  "/portfolio/4.jpg",
-  "/portfolio/5.png",
-  "/portfolio/6.jpg",
-  "/portfolio/7.jpg",
-  "/portfolio/8.png",
-  "/portfolio/9.jpg",
-  "/portfolio/10.jpg",
-  "/portfolio/11.jpg",
-  "/portfolio/12.jpg",
+  "/portfolio/1.webp",
+  "/portfolio/2.webp",
+  "/portfolio/3.webp",
+  "/portfolio/4.webp",
+  "/portfolio/5.webp",
+  "/portfolio/6.webp",
+  "/portfolio/7.webp",
+  "/portfolio/8.webp",
+  "/portfolio/9.webp",
+  "/portfolio/10.webp",
+  "/portfolio/11.webp",
+  "/portfolio/12.webp",
 ];
 
 export default function Portfolio() {
